@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="SkinsAPI:jar">
-    <output-path>$USER_HOME$/Desktop/mc - Copie</output-path>
-    <root id="archive" name="SkinsAPI.jar">
-      <element id="module-output" name="SkinsAPI" />
-    </root>
-  </artifact>
-</component>
