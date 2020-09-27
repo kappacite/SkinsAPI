@@ -17,7 +17,7 @@ Don't forget the disable the API when your plugin is disable.
 
 To set a player skin,
 ```java
-SkinsAPI.getInstance().getSkinsManager().setSkin(player, value, signature);
+SkinsAPI.getInstance().getSkinsManager().setSkin(player, skin);
 ```
 And that's it!
 
