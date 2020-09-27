@@ -1,8 +1,7 @@
 package fr.kappacite.skinsapi;
 
 import fr.kappacite.skinsapi.exceptions.InsupportedVersionException;
-import fr.kappacite.skinsapi.nms.Skins_1_8_R3;
-import fr.kappacite.skinsapi.nms.Skins_1_9_R1;
+import fr.kappacite.skinsapi.nms.*;
 import fr.kappacite.skinsapi.object.SkinsManager;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
@@ -32,12 +31,16 @@ public class SkinsAPI{
 
         Validate.isTrue(!enabled, "Plugin is already enabled");
 
-        if(setupSkins()){
-            this.plugin.getLogger().info("SkinsAPI setup was successful!");
-            this.plugin.getLogger().info("SkinsAPI enabled.");
-            this.enabled = true;
-        }else{
-            this.enabled = false;
+        try {
+            if(setupSkins()){
+                this.plugin.getLogger().info("SkinsAPI setup was successful!");
+                this.plugin.getLogger().info("SkinsAPI enabled.");
+                this.enabled = true;
+            }else{
+                this.enabled = false;
+            }
+        } catch (InsupportedVersionException e) {
+            e.printStackTrace();
         }
 
     }
@@ -47,7 +50,7 @@ public class SkinsAPI{
         this.enabled = false;
     }
 
-    private boolean setupSkins() {
+    private boolean setupSkins() throws InsupportedVersionException {
 
         String version;
 
@@ -61,6 +64,14 @@ public class SkinsAPI{
 
         switch (version) {
 
+            case "v1_8_R1":
+                this.skinsManager = new SkinsManager(new Skins_1_8_R1());
+                break;
+
+            case "v1_8_R2":
+                this.skinsManager = new SkinsManager(new Skins_1_8_R2());
+                break;
+
             case "v1_8_R3":
                 this.skinsManager = new SkinsManager(new Skins_1_8_R3());
                 break;
@@ -69,17 +80,33 @@ public class SkinsAPI{
                 this.skinsManager = new SkinsManager(new Skins_1_9_R1());
                 break;
 
+            case "v1_9_R2":
+                this.skinsManager = new SkinsManager(new Skins_1_9_R2());
+                break;
+
+            case "v1_10_R1":
+                this.skinsManager = new SkinsManager(new Skins_1_10_R1());
+                break;
+
+            case "v1_11_R1":
+                this.skinsManager = new SkinsManager(new Skins_1_11_R1());
+                break;
+
+            case "v1_12_R1":
+                this.skinsManager = new SkinsManager(new Skins_1_12_R1());
+                break;
+
             default:
-                this.plugin.getLogger().severe("Your server is running in an insupported version!");
-                return false;
+                this.plugin = null;
+                throw new InsupportedVersionException("Your version is not supported!");
 
 
         }
         return true;
     }
 
-    public SkinsManager getSkinsManager() throws InsupportedVersionException {
-        if(!enabled) throw new InsupportedVersionException("Your version is not supported!");
+    public SkinsManager getSkinsManager(){
+        if(!enabled) return null;
         return this.skinsManager;
     }
 
