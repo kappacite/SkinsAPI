@@ -31,6 +31,6 @@ If you have some problem with it like NMS or other, you can open an issue.
  - Get skin from Mojang
  
 # License
-[MIT](https://choosealicense.com/licenses/mit/)
+[GPL](https://www.gnu.org/licenses/licenses.fr.html)
 
 
