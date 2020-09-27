@@ -9,15 +9,15 @@ Download ``SkinsAPI.jar`` and add it as a dependance to your project.
 First, you need to set the plugin & to enable SkinsAPI.
 In your main class, in the onEnable:
 ```java
-SkinsAPI.INSTANCE.setPlugin(this);
-SkinsAPI.INSTANCE.enable();
+SkinsAPI.getInstance().setPlugin(this);
+SkinsAPI.getInstance().enable();
 ```
 
 Don't forget the disable the API when your plugin is disable.
 
 To set a player skin,
 ```java
-SkinsAPI.INSTANCE.getSkinsManager().setSkin(player, value, signature);
+SkinsAPI.getInstance().getSkinsManager().setSkin(player, value, signature);
 ```
 And that's it!
 
