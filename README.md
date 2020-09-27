@@ -21,6 +21,9 @@ SkinsAPI.getInstance().getSkinsManager().setSkin(player, value, signature);
 ```
 And that's it!
 
+# Build
+If you are using Intellij IDEA, don't forget to set the dependency as " Compile " in Modules > Dependencies and to create an artifacts with dependencies.
+
 # Compatibility
 SkinsAPI supports 1.8 to 1.15.2 with full NMS compatibility.
 
