@@ -1,17 +1,17 @@
 package fr.kappacite.skinsapi;
 
+import fr.kappacite.skinsapi.events.Join;
+import fr.kappacite.skinsapi.events.Leave;
 import fr.kappacite.skinsapi.exceptions.InsupportedVersionException;
 import fr.kappacite.skinsapi.nms.*;
 import fr.kappacite.skinsapi.object.SkinsManager;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.PluginManager;
-import org.bukkit.plugin.java.JavaPlugin;
 
 public class SkinsAPI{
 
-    public static final SkinsAPI INSTANCE = new SkinsAPI();
+    private static final SkinsAPI INSTANCE = new SkinsAPI();
 
     private Plugin plugin;
 
@@ -33,6 +33,8 @@ public class SkinsAPI{
 
         try {
             if(setupSkins()){
+                this.plugin.getServer().getPluginManager().registerEvents(new Join(), plugin);
+                this.plugin.getServer().getPluginManager().registerEvents(new Leave(), plugin);
                 this.plugin.getLogger().info("SkinsAPI setup was successful!");
                 this.plugin.getLogger().info("SkinsAPI enabled.");
                 this.enabled = true;
@@ -56,7 +58,7 @@ public class SkinsAPI{
 
         try {
             version = Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
-        } catch (ArrayIndexOutOfBoundsException whatVersionAreYouUsingException) {
+        } catch (ArrayIndexOutOfBoundsException exception) {
             return false;
         }
 
@@ -96,6 +98,22 @@ public class SkinsAPI{
                 this.skinsManager = new SkinsManager(new Skins_1_12_R1());
                 break;
 
+            case "v1_13_R1":
+                this.skinsManager = new SkinsManager(new Skins_1_13_R1());
+                break;
+
+            case "v1_13_R2":
+                this.skinsManager = new SkinsManager(new Skins_1_13_R2());
+                break;
+
+            case "v1_14_R1":
+                this.skinsManager = new SkinsManager(new Skins_1_14_R1());
+                break;
+
+            case "v1_15_R1":
+                this.skinsManager = new SkinsManager(new Skins_1_15_R1());
+                break;
+
             default:
                 this.plugin = null;
                 throw new InsupportedVersionException("Your version is not supported!");
@@ -108,6 +126,10 @@ public class SkinsAPI{
     public SkinsManager getSkinsManager(){
         if(!enabled) return null;
         return this.skinsManager;
+    }
+
+    public static SkinsAPI getInstance(){
+        return INSTANCE;
     }
 
 }

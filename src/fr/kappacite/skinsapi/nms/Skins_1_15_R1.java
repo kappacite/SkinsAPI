@@ -3,15 +3,15 @@ package fr.kappacite.skinsapi.nms;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import fr.kappacite.skinsapi.object.Skin;
-import net.minecraft.server.v1_8_R2.*;
+import net.minecraft.server.v1_15_R1.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_8_R2.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_15_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 import java.util.HashSet;
 
-public class Skins_1_8_R2 extends Skins{
+public class Skins_1_15_R1 extends Skins {
 
     @Override
     public Property getPlayerSkinAsProperty(Player player) {
@@ -69,9 +69,8 @@ public class Skins_1_8_R2 extends Skins{
         PacketPlayOutEntityDestroy destroyEntityPacket = new PacketPlayOutEntityDestroy(player.getEntityId());
         PacketPlayOutNamedEntitySpawn entitySpawnPacket = new PacketPlayOutNamedEntitySpawn(entityPlayer);
         PacketPlayOutRespawn respawnEntityPacket = new PacketPlayOutRespawn (
-                craftPlayer.getWorld().getEnvironment().getId(), world.getDifficulty(),
-                world.getWorldData().getType(), entityPlayer.playerInteractManager.getGameMode());
-        PacketPlayOutPosition positionPacket = new PacketPlayOutPosition(l.getX(), l.getY(), l.getZ(), l.getYaw(), l.getPitch(), new HashSet<>());
+                entityPlayer.dimension, WorldData.c(world.getWorldData().getSeed()), world.getWorldData().getType(), entityPlayer.playerInteractManager.getGameMode());
+        PacketPlayOutPosition positionPacket = new PacketPlayOutPosition(l.getX(), l.getY(), l.getZ(), l.getYaw(), l.getPitch(), new HashSet<>(), 0);
         PacketPlayOutHeldItemSlot heldItemPacket = new PacketPlayOutHeldItemSlot(player.getInventory().getHeldItemSlot());
 
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
@@ -97,4 +96,6 @@ public class Skins_1_8_R2 extends Skins{
 
         return;
     }
+
 }
+

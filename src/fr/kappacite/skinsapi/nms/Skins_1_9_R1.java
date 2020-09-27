@@ -14,6 +14,22 @@ import java.util.HashSet;
 public class Skins_1_9_R1 extends Skins {
 
     @Override
+    public Property getPlayerSkinAsProperty(Player player) {
+        CraftPlayer craftPlayer = (CraftPlayer) player;
+        EntityPlayer entityPlayer = craftPlayer.getHandle();
+        GameProfile gameProfile = entityPlayer.getProfile();
+
+        if(gameProfile.getProperties().containsKey("textures")) return (Property) gameProfile.getProperties().get("textures").toArray()[0];
+        return new Property("textures", "", "");
+    }
+
+    @Override
+    public Skin getPlayerSkin(Player player) {
+        Property textures = this.getPlayerSkinAsProperty(player);
+        return new Skin(textures.getValue(), textures.getSignature());
+    }
+
+    @Override
     public boolean setSkin(Player player, Skin skin){
         return setSkin(player, skin.getValue(), skin.getSignature());
     }

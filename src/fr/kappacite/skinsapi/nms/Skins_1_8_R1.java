@@ -2,6 +2,7 @@ package fr.kappacite.skinsapi.nms;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
+import fr.kappacite.skinsapi.SkinsAPI;
 import fr.kappacite.skinsapi.object.Skin;
 import net.minecraft.server.v1_8_R1.*;
 import org.bukkit.Bukkit;
@@ -12,6 +13,22 @@ import org.bukkit.entity.Player;
 import java.util.HashSet;
 
 public class Skins_1_8_R1 extends Skins{
+
+    @Override
+    public Property getPlayerSkinAsProperty(Player player) {
+        CraftPlayer craftPlayer = (CraftPlayer) player;
+        EntityPlayer entityPlayer = craftPlayer.getHandle();
+        GameProfile gameProfile = entityPlayer.getProfile();
+
+        if(gameProfile.getProperties().containsKey("textures")) return (Property) gameProfile.getProperties().get("textures").toArray()[0];
+        return new Property("textures", "", "");
+    }
+
+    @Override
+    public Skin getPlayerSkin(Player player) {
+        Property textures = this.getPlayerSkinAsProperty(player);
+        return new Skin(textures.getValue(), textures.getSignature());
+    }
 
     @Override
     public boolean setSkin(Player player, Skin skin){
@@ -81,4 +98,5 @@ public class Skins_1_8_R1 extends Skins{
 
         return;
     }
+
 }
