@@ -47,14 +47,14 @@ public class SkinsManager {
 
     public boolean resetPlayerSkin(Player player){
         Validate.notNull(player, "Player cannot be null.");
-        Property intiialeSkin = this.getPlayerInitialeSkin(player);
-        return this.setPlayerSkin(player, new Skin(intiialeSkin.getValue(), intiialeSkin.getSignature()));
+        Property initialeSkin = this.getPlayerInitialeSkin(player);
+        return this.setPlayerSkin(player, new Skin(initialeSkin.getValue(), initialeSkin.getSignature()));
     }
 
     public boolean resetPlayerSkin(Player player, boolean updateSelf){
         Validate.notNull(player, "Player cannot be null.");
-        Property intiialeSkin = this.getPlayerInitialeSkin(player);
-        return this.setPlayerSkin(player, new Skin(intiialeSkin.getValue(), intiialeSkin.getSignature()), updateSelf);
+        Property initialeSkin = this.getPlayerInitialeSkin(player);
+        return this.setPlayerSkin(player, new Skin(initialeSkin.getValue(), initialeSkin.getSignature()), updateSelf);
     }
 
     public void addPlayerInitialeSkin(Player player){

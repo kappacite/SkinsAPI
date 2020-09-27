@@ -1,5 +1,6 @@
 package fr.kappacite.skinsapi;
 
+import fr.kappacite.skinsapi.events.SkinStorage;
 import fr.kappacite.skinsapi.exceptions.InsupportedVersionException;
 import fr.kappacite.skinsapi.nms.*;
 import fr.kappacite.skinsapi.object.SkinsManager;
@@ -31,6 +32,7 @@ public class SkinsAPI{
 
         try {
             if(setupSkins()){
+                this.plugin.getServer().getPluginManager().registerEvents(new SkinStorage(), plugin);
                 this.plugin.getLogger().info("SkinsAPI setup was successful!");
                 this.plugin.getLogger().info("SkinsAPI enabled.");
                 this.enabled = true;
