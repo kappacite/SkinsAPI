@@ -33,7 +33,8 @@ SkinsAPI supports 1.8 to 1.15.2 with full NMS compatibility.
 If you have some problem with it like NMS or other, you can open an issue.
 
 # In future
- - Get skin from Mojang
+ * Set skin from Mojang Account
+ * Set skin from image
  
 # License
 [GPL](https://www.gnu.org/licenses/licenses.fr.html)
