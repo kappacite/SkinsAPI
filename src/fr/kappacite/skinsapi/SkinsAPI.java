@@ -1,7 +1,5 @@
 package fr.kappacite.skinsapi;
 
-import fr.kappacite.skinsapi.events.Join;
-import fr.kappacite.skinsapi.events.Leave;
 import fr.kappacite.skinsapi.exceptions.InsupportedVersionException;
 import fr.kappacite.skinsapi.nms.*;
 import fr.kappacite.skinsapi.object.SkinsManager;
@@ -33,8 +31,6 @@ public class SkinsAPI{
 
         try {
             if(setupSkins()){
-                this.plugin.getServer().getPluginManager().registerEvents(new Join(), plugin);
-                this.plugin.getServer().getPluginManager().registerEvents(new Leave(), plugin);
                 this.plugin.getLogger().info("SkinsAPI setup was successful!");
                 this.plugin.getLogger().info("SkinsAPI enabled.");
                 this.enabled = true;
@@ -130,6 +126,10 @@ public class SkinsAPI{
 
     public static SkinsAPI getInstance(){
         return INSTANCE;
+    }
+
+    public Plugin getPlugin(){
+        return this.plugin;
     }
 
 }

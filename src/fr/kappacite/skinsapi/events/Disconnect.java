@@ -5,10 +5,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-public class Leave implements Listener {
+public class Disconnect implements Listener {
 
     @EventHandler
-    public void onLeave(PlayerQuitEvent event){
+    public void onDisconnect(PlayerDisconnectEvent event){
         SkinsAPI.getInstance().getSkinsManager().removePlayerInitialeSkin(event.getPlayer());
     }
 
