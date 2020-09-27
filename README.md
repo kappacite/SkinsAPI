@@ -21,6 +21,8 @@ SkinsAPI.getInstance().getSkinsManager().setSkin(player, skin);
 ```
 And that's it!
 
+More details on https://github.com/kappacite/SkinsAPI/wiki.
+
 # Build
 If you are using Intellij IDEA, don't forget to set the dependency as " Compile " in Modules > Dependencies and to create an artifacts with dependencies.
 
