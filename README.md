@@ -3,7 +3,7 @@ SkinsAPI is an API for spigot developers who wants to manipulate player skins.
 It allows you to change a player skin easily with 2 lines.
 
 # Installation
-Download ``SkinsAPI.jar`` and add it as a dependance to your project.
+Download ``SkinsAPI.jar``(https://github.com/kappacite/SkinsAPI/blob/master/SkinsAPI.jar) and add it as a dependance to your project.
 
 # Usage
 First, you need to set the plugin & to enable SkinsAPI.
