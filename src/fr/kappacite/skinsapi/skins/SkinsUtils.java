@@ -18,7 +18,7 @@ public class SkinsUtils {
     private static final String POST_REQUEST = "https://api.mineskin.org/generate/upload";
     private static final String MOJANG_REQUEST = "https://api.ashcon.app/mojang/v2/user/%s";
 
-    protected static void loadSkins(String player, File file, SkinType skinType){
+    protected static void loadSkins(String player, File image, SkinType skinType){
 
 
         long start;
@@ -38,7 +38,7 @@ public class SkinsUtils {
                                     .connect(POST_REQUEST)
                                     .userAgent(USER_AGENT)
                                     .method(Connection.Method.POST)
-                                    .data("file", file.getName(), new FileInputStream(file))
+                                    .data("file", image.getName(), new FileInputStream(image))
                                     .ignoreContentType(true)
                                     .ignoreHttpErrors(true)
                                     .timeout(40000);
@@ -49,7 +49,7 @@ public class SkinsUtils {
                             String value = json.getJSONObject("data").getJSONObject("texture").getString("value");
                             String signature = json.getJSONObject("data").getJSONObject("texture").getString("signature");
 
-                            SkinsAPI.getInstance().getSkinsManager().loadedImageSkin.put(file, new Skin(value, signature));
+                            SkinsAPI.getInstance().getSkinsManager().loadedImageSkin.put(image, new Skin(value, signature));
                             SkinsAPI.getInstance().getPlugin().getLogger().info("Image skin load takes " + (System.currentTimeMillis()-start) + " ms!");
                         } catch (IOException e) {
                             e.printStackTrace();

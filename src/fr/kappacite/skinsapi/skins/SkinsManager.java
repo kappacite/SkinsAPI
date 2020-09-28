@@ -75,9 +75,9 @@ public class SkinsManager {
         SkinsUtils.loadSkins(player, null, SkinType.MOJANG);
     }
 
-    public Skin getImageSkin(File file) throws SkinNotLoadedException {
-        if(!this.loadedImageSkin.containsKey(file)) throw new SkinNotLoadedException("Skin not loaded !");
-        return this.loadedImageSkin.get(file);
+    public Skin getImageSkin(File image) throws SkinNotLoadedException {
+        if(!this.loadedImageSkin.containsKey(image)) throw new SkinNotLoadedException("Skin not loaded !");
+        return this.loadedImageSkin.get(image);
     }
 
     public Skin getMojangSkin(String player) throws SkinNotLoadedException {
