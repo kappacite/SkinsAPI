@@ -5,6 +5,11 @@ It allows you to change a player skin easily with 2 lines.
 # Installation
 Download ``SkinsAPI.jar``(https://github.com/kappacite/SkinsAPI/blob/master/SkinsAPI.jar) and add it as a dependance to your project.
 
+# Features
+
+ * Get & set a skin from an image.
+ * Get & set a skin from a mojang account.
+
 # Usage
 First, you need to set the plugin & to enable SkinsAPI.
 In your main class, in the onEnable:
