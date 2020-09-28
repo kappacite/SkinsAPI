@@ -17,9 +17,14 @@ Don't forget the disable the API when your plugin is disable.
 
 To set a player skin,
 ```java
-SkinsAPI.getInstance().getSkinsManager().setSkin(player, value, signature);
+SkinsAPI.getInstance().getSkinsManager().setSkin(player, skin);
 ```
 And that's it!
+
+More details on https://github.com/kappacite/SkinsAPI/wiki.
+
+# Build
+If you are using Intellij IDEA, don't forget to set the dependency as " Compile " in Modules > Dependencies and to create an artifacts with dependencies.
 
 # Compatibility
 SkinsAPI supports 1.8 to 1.15.2 with full NMS compatibility.
@@ -28,7 +33,8 @@ SkinsAPI supports 1.8 to 1.15.2 with full NMS compatibility.
 If you have some problem with it like NMS or other, you can open an issue.
 
 # In future
- - Get skin from Mojang
+ * Set skin from Mojang Account
+ * Set skin from image
  
 # License
 [GPL](https://www.gnu.org/licenses/licenses.fr.html)
