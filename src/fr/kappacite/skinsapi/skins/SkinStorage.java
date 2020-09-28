@@ -1,4 +1,4 @@
-package fr.kappacite.skinsapi.events;
+package fr.kappacite.skinsapi.skins;
 
 import fr.kappacite.skinsapi.SkinsAPI;
 import org.bukkit.event.EventHandler;
@@ -11,12 +11,12 @@ public class SkinStorage implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onJoin(PlayerJoinEvent event){
-        SkinsAPI.getInstance().getSkinsManager().addPlayerInitialeSkin(event.getPlayer());
+        SkinsAPI.getInstance().getSkinsManager().addPlayerInitialSkin(event.getPlayer());
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onQuit(PlayerQuitEvent event){
-        SkinsAPI.getInstance().getSkinsManager().removePlayerInitialeSkin(event.getPlayer());
+        SkinsAPI.getInstance().getSkinsManager().removePlayerInitialSkin(event.getPlayer());
     }
 
 

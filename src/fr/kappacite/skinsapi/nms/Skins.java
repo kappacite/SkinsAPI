@@ -1,7 +1,7 @@
 package fr.kappacite.skinsapi.nms;
 
 import com.mojang.authlib.properties.Property;
-import fr.kappacite.skinsapi.object.Skin;
+import fr.kappacite.skinsapi.skins.Skin;
 import org.bukkit.entity.Player;
 
 public abstract class Skins {

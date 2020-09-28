@@ -2,7 +2,7 @@ package fr.kappacite.skinsapi.nms;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
-import fr.kappacite.skinsapi.object.Skin;
+import fr.kappacite.skinsapi.skins.Skin;
 import net.minecraft.server.v1_15_R1.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

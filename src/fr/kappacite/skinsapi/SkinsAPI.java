@@ -1,9 +1,9 @@
 package fr.kappacite.skinsapi;
 
-import fr.kappacite.skinsapi.events.SkinStorage;
+import fr.kappacite.skinsapi.skins.SkinStorage;
 import fr.kappacite.skinsapi.exceptions.InsupportedVersionException;
 import fr.kappacite.skinsapi.nms.*;
-import fr.kappacite.skinsapi.object.SkinsManager;
+import fr.kappacite.skinsapi.skins.SkinsManager;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;

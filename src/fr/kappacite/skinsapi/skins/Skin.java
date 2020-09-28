@@ -1,4 +1,4 @@
-package fr.kappacite.skinsapi.object;
+package fr.kappacite.skinsapi.skins;
 
 public class Skin {
 
