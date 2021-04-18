@@ -11,14 +11,14 @@ Download ``SkinsAPI.jar``(https://github.com/kappacite/SkinsAPI/blob/master/Skin
  * Get & set a skin from a mojang account.
 
 # Usage
-First, you need to set the plugin & to enable SkinsAPI.
+First, you need to set the plugin & enable SkinsAPI.
 In your main class, in the onEnable:
 ```java
 SkinsAPI.getInstance().setPlugin(this);
 SkinsAPI.getInstance().enable();
 ```
 
-Don't forget the disable the API when your plugin is disable.
+Don't forget to disable the API when your plugin is reloaded/stopped.
 
 To set a player skin,
 ```java
