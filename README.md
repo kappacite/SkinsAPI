@@ -36,7 +36,7 @@ More details on https://github.com/kappacite/SkinsAPI/wiki.
 If you are using Intellij IDEA, don't forget to set the dependency as " Compile " in Modules > Dependencies and to create an artifacts with dependencies.
 
 # Compatibility
-SkinsAPI supports 1.8 to 1.15.2 with full NMS compatibility.
+SkinsAPI supports 1.8 to 1.16.5 with full NMS compatibility.
 
 # Support
 If you have some problem with it like NMS or other, you can open an issue.
