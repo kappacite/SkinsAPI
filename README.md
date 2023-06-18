@@ -5,7 +5,9 @@ It allows you to change a player skin easily with 2 lines.
 # Installation
 Download ``SkinsAPI.jar``(https://github.com/kappacite/SkinsAPI/blob/master/SkinsAPI.jar) and add it as a dependance to your project.
 
-![Don't forget to include the JAR in the export as showed](https://i.imgur.com/uRvdQt5.png).
+Don't forget to include the JAR in the export as showed.
+
+![](https://i.imgur.com/uRvdQt5.png)
 
 # Features
 
