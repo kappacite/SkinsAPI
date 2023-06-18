@@ -9,7 +9,6 @@ import org.jsoup.Jsoup;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class SkinsUtils {
@@ -57,7 +56,6 @@ public class SkinsUtils {
                 }));
 
                 break;
-
             case MOJANG:
 
                 start = System.currentTimeMillis();

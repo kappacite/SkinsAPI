@@ -1,5 +1,6 @@
 package fr.kappacite.skinsapi.skins;
 
+
 public class Skin {
 
     private String value;

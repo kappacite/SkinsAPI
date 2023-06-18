@@ -8,7 +8,7 @@ import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 
-public class SkinsAPI{
+public class SkinsAPI {
 
     private static final SkinsAPI INSTANCE = new SkinsAPI();
 
@@ -110,6 +110,18 @@ public class SkinsAPI{
 
             case "v1_15_R1":
                 this.skinsManager = new SkinsManager(new Skins_1_15_R1());
+                break;
+
+            case "v1_16_R1":
+                this.skinsManager = new SkinsManager(new Skins_1_16_R1());
+                break;
+
+            case "v1_16_R2":
+                this.skinsManager = new SkinsManager(new Skins_1_16_R2());
+                break;
+
+            case "v1_16_R3":
+                this.skinsManager = new SkinsManager(new Skins_1_16_R3());
                 break;
 
             default:
